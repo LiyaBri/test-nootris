@@ -1,56 +1,40 @@
-@import "null"; //обнуляем параметры
-@import "fonts";
-@import "icons";
+@import "null";
 
-//Шрифт по умолчанию
+// start var
+$fontFamily: 'Rubik', sans-serif;
+$fontSize: 18px;
 
-$fontFamily: Gilroy-Medium;
-$fontSize: 16px;
-
-//ПЕРЕМЕННЫЕ
 $minWidth: 320px;
 $maxWidth: 1440;
-$maxWidthContainer: 1270; //+30px
+$maxWidthContainer: 1342; //+30px
 $md1: ($maxWidthContainer + 12)+px;
 $md2: 991.98px;
 $md3: 767.98px;
 $md4: 479.98px;
 
-$mainColor: #3A3A3A;
-$orangeColor: #E89F71;
-$grayColor: #898989;
-$darkGreyColor: #616161;
+$darkColor: #111111;
+$yellowColor: #FCDA28;
+$whiteColor: #FFFFFF;
+$orangeColor: #FCB500;
 
-//ПЕРЕМЕННЫЕ
+//end var
 
 body {
-
-	color: $mainColor;
-
-	&._lock {
-		overflow: hidden;
-	}
-
+	color: $whiteColor;
 	font-family: $fontFamily;
 	font-size: $fontSize;
 
 }
-
-//<ОБОЛОЧКА> вообще для всего контента. Помогает раскидать удобно header, footer and main
 .wrapper {
 	width: 100%;
 	min-height: 100%;
-	overflow: hidden; //контент обрезается без предоставления прокрутки
+	overflow: hidden;
 	display: flex;
 	flex-direction: column;
-	/* &._loaded {
-    } */
 }
 
-//<ОБОЛОЧКА>
-
-//<ОСНОВНАЯ СЕТКА>
-._container {
+//main style
+.container {
 	max-width: $maxWidthContainer + px;
 	padding: 0px 15px; //вот те 30px
 	margin: 0 auto;
@@ -64,3 +48,4 @@ header {
 .page {
 	flex: 1 1 auto;
 }
+
