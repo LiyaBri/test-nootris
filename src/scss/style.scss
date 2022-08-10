@@ -1,4 +1,5 @@
 @import "null";
+@import "adaptive";
 
 // start var
 $fontFamily: 'Rubik', sans-serif;
@@ -20,7 +21,7 @@ $orangeColor: #FCB500;
 //end var
 
 body {
-	color: $whiteColor;
+	color: #000000;
 	font-family: $fontFamily;
 	font-size: $fontSize;
 	line-height: 24px;
@@ -83,7 +84,6 @@ header {
 	}
 
 	&__number {
-		color: #000000;
 		font-size: 12px;
 		position: absolute;
 		bottom: -10px;
@@ -117,3 +117,46 @@ header {
 }
 
 //end header
+
+//start home
+.home {
+	background-color: $yellowColor;
+	position: relative;
+	padding: 96px 0;
+	z-index: 1;
+	&::after {
+		content: url('../img/back-home.png');
+		position: absolute;
+		bottom: -100px;
+		right: 0;
+		width: 816px;
+		height: 984px;
+	}
+	&__title {
+		z-index: 100;
+		@include adaptiv-value("font-size", 144, 36, 1);
+		font-weight: 700;
+		line-height: 106%;
+		color: $whiteColor;
+		margin-bottom: 24px;
+		text-transform: uppercase;
+	}
+
+	&__subtitle {
+		line-height: 28px;
+		margin-bottom: 120px;
+	}
+
+	&__help {
+		@include adaptiv-value("font-size", 36, 18, 1);
+		font-weight: 700;
+		line-height: 120%;
+		text-transform: uppercase;
+		margin-bottom: 16px;
+	}
+
+	&__desc {
+		line-height: 117%;
+	}
+}
+//end home
