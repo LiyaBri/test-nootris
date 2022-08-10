@@ -15,7 +15,7 @@
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "latest",
-    "del": "latest",
+    "del": "^7.0.0",
     "fs": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -25,7 +25,7 @@
     "gulp-fonter": "latest",
     "gulp-group-css-media-queries": "latest",
     "gulp-if": "latest",
-    "gulp-imagemin": "latest",
+    "gulp-imagemin": "^8.0.0",
     "gulp-newer": "latest",
     "gulp-notify": "latest",
     "gulp-plumber": "latest",
@@ -50,6 +50,7 @@
   "dependencies": {
     "-": "^0.0.1",
     "animate.css": "^4.1.1",
+    "gulp-fonter-fix": "^0.0.1",
     "gulp-htmlmin": "^5.0.1"
   }
 }

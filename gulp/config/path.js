@@ -16,7 +16,7 @@ export const path = { //инфа о пути
     },
     src: {
         js: `${srcFolder}/js/app.js`,
-        images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif, webp}`,
+        images: `${srcFolder}/img/**/*.{png,jpg, jpeg, gif, webp}`, 
         svg: `${srcFolder}/img/**/*.svg`,
         scss: `${srcFolder}/scss/style.scss`,
         html: `${srcFolder}/*.html`,
@@ -27,7 +27,7 @@ export const path = { //инфа о пути
         js: `${srcFolder}/js/**/*.js`,
         scss: `${srcFolder}/scss/**/*.scss`,
         html: `${srcFolder}/**/*.html`,
-        images: `${srcFolder}/img/**/*.{jpg, jpeg, png, gif, webp, svg}`,
+        images: `${srcFolder}/img/**/*.{png,jpg, jpeg, gif, webp}`, //jpg, png, jpeg, png, gif, webp, svg
         files: `${srcFolder}/files/**/*.*`
     },
     clean: buildFolder,
