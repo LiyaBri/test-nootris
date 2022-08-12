@@ -44,13 +44,13 @@ body {
 	padding: 0px 15px; //вот те 30px
 	margin: 0 auto;
 	@media (max-width: $md1) {
-		max-width: 950px;
+		padding: 0px 30px;
 	}
-	@media (max-width: $md2) {
+	/* @media (max-width: $md2) {
 		max-width: 700px;
-	}
-	@media (max-width: $md3) {
-		max-width: 440px;
+	} */
+	@media (max-width: $md4) {
+		padding: 0px 15px;
 	}
 }
 
@@ -66,16 +66,49 @@ header {
 // start header
 .header {
 	padding: 23px 80px 23px 64px;
+	@media (max-width: $md3) {
+		padding: 23px 20px 23px 24px;
+	}
+	@media (max-width: $md4) {
+		padding: 23px 10px 23px 10px;
+	}
 	background-color: $darkColor;
 	display: flex;
 	align-items: center;
 	justify-content: space-between; 
 	z-index: 100;
 	&__logo {
+		@media (max-width: $md4) {
+			transform: scale(0.8);
+		}
 	}
 
 	&__menu {
 		display: flex;
+		@media (max-width: $md1) {
+			flex-direction: column;
+			justify-content: center;
+			padding-left: 90px;
+			position: absolute;
+			right: -100%;
+			width: 50%;
+			height: 100%;
+			background: black;
+			opacity: 0.95;
+			top: 0;
+			z-index: 300;
+			transition: all 0.3s ease 0s;
+			&.active__menu {
+				right: 0;
+			}
+		}
+		@media (max-width: $md3) {
+			width: 80%;
+		}
+		@media (max-width: $md4) {
+			padding-left: 40px;
+			width: 100%;
+		}
 	}
 
 	&__cart {
@@ -103,9 +136,27 @@ header {
 		right: 1px;
 
 	}
+	&__burger {
+		display: none;
+		@media (max-width: $md1) {
+			display: flex;
+			align-items: center;
+		}
+	}
 }
 .menu {
 	display: flex;
+	@media (max-width: $md1) {
+		flex-direction: column;
+		
+		li {
+			&:not(:last-child) {
+				margin-right: 0;
+				margin-bottom: 30px;
+			}
+			font-size: 24px;
+		}
+	}
 	li {
 		&:not(:last-child) {
 			margin-right: 40px;
@@ -126,10 +177,67 @@ header {
 		&:hover {
 			color: $orangeColor;
 		}
+		@media (max-width: $md1) {
+			margin-left: 0;
+			margin-top: 120px;
+			font-size: 22px;
+			color: $orangeColor;
+		}
 	}
 }
 
 //end header
+
+// start humburger
+.burger {
+	@media (max-width: $md1) {
+		position: relative;
+		cursor: pointer;
+		@include adaptiv-value("margin-left", 700, 100, 1);
+		&__desc {
+			color: $whiteColor;
+			@media (max-width: $md4) {
+				display: none;
+			}
+		}
+
+		&__line {
+			right: -40px;
+			position: absolute;
+			width: 25px;
+			border: 1px solid $whiteColor;
+			background:$whiteColor;
+			transition: all 0.3s ease 0s;
+			&:last-child{
+				transform: rotate(-90deg);
+			}
+			&.active__burger {
+				z-index: 350;
+				transform: rotate(45deg);
+				border: 1px solid $orangeColor;
+				background: $orangeColor;
+				&:last-child{
+					transform: rotate(-45deg);
+				}
+				@include adaptiv-value("right", -100, -50, 1);
+			}
+		}
+	}
+	@media (max-width: $md2) {
+		@include adaptiv-value("margin-left", 600, 100, 1);
+	}
+	@media (max-width: $md3) {
+		@include adaptiv-value("margin-left", 600, 10, 1);
+	}
+	@media (max-width: $md4) {
+		@include adaptiv-value("margin-left", 300, 0, 1);
+	}
+}
+
+._menu-active {
+    left: 0;
+}
+//end hamburger
 
 //start home
 .home {
@@ -164,7 +272,6 @@ header {
 			bottom: -230px;
 			right: -250px;
 			transform: scale(0.6);
-			z-index: -5;
 		}
 	}
 	@media (max-width: $md3) {
@@ -173,7 +280,6 @@ header {
 			right: -300px;
 			transform: scale(0.5);
 			opacity: 0.5;
-			z-index: -5;
 		}
 	}
 	@media (max-width: $md4) {
